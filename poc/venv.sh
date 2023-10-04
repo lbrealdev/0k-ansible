@@ -2,7 +2,7 @@
 
 PYTHON_DEFAULT_VENV_NAME="venv"
 
-function enable() {
+function yen_venv() {
   yen create "$PYTHON_DEFAULT_VENV_NAME" -p 3.12
   . "$PYTHON_DEFAULT_VENV_NAME/bin/activate"
 }
@@ -11,7 +11,7 @@ function pip_packages() {
   pip install ansible dynaconf -q
 }
 
-function disable() {
+function disable_venv() {
   if [ -n "$VIRTUAL_ENV" ]; then
     echo "Deleted $PYTHON_DEFAULT_VENV_NAME with Python 3.12.0 ..."
     deactivate
@@ -24,14 +24,13 @@ function disable() {
 function main() {
   arg="$1"
   if [ "$arg" == "up" ]; then
-    enable
+    yen_venv
     pip_packages
   elif [ "$arg" == "down" ]; then
-    disable
+    disable_venv
   else
     echo "Invalid option!"
   fi
 }
 
 main "$@"
-
