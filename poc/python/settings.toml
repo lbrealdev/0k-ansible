@@ -1,0 +1,11 @@
+[default]
+env = "undefined"
+
+[dev]
+env = "int"
+
+[pre]
+env = "uat"
+
+[pro]
+env = "live"

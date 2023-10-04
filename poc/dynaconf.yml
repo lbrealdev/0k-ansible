@@ -1,0 +1,54 @@
+---
+- name: Dynaconf Configuration Management
+  hosts: localhost
+  become: false
+  gather_facts: true
+
+  vars:
+    python_run_cmd: "python env.py"
+    dynaconf_list_cmd: "dynaconf --instance config.settings list -k env"
+    path_script: "python/"
+
+  tasks:
+
+    - name: Gathering facts
+      ansible.builtin.debug:
+        var: ansible_facts
+      no_log: true
+
+    # List development environment variables.
+    # And run the configuration Python script.
+    - name: Dynaconf list environment variables for DEV
+      ansible.builtin.shell:
+        cmd: |
+          {{ dynaconf_list_cmd }}
+          {{ python_run_cmd }}
+        chdir: "{{ path_script }}"
+      register: command
+      when: ansible_facts.architecture == "x86_64"
+
+    # This task will export the environment switcher.
+    # List testing environment variables.
+    # And run the configuration Python script.
+    - name: Dynaconf list environment variables for UAT
+      ansible.builtin.shell:
+        cmd: |
+          export $SET_ENV
+          {{ dynaconf_list_cmd }}
+          {{ python_run_cmd }}
+        chdir: ../../repos_lbrealdev/python-cli/cli-examples/cli/gittl/
+      environment:
+        SET_ENV: pre
+
+    # This task will export the environment switcher.
+    # List production environment variables.
+    # And run the configuration Python script.
+    - name: Dynaconf list environment variables for LIVE
+      ansible.builtin.shell:
+        cmd: |
+          export $SET_ENV
+          {{ dynaconf_list_cmd }}
+          {{ python_run_cmd }}
+        chdir: ../../repos_lbrealdev/python-cli/cli-examples/cli/gittl/
+      environment:
+        SET_ENV: pro
