@@ -1,11 +1,17 @@
+# Default settings variables
+
 [default]
-env = "undefined"
+# Static ENV variable for DEFAULT deployment environment
+ENV = "default"
 
 [dev]
-env = "int"
+# Static ENV variable for DEV deployment environment
+ENV = "int"
 
 [pre]
-env = "uat"
+# Static ENV variable for PRE deployment environment
+ENV = "uat"
 
 [pro]
-env = "live"
+# Static ENV variable for PRO deployment environment
+ENV = "live"

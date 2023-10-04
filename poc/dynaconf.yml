@@ -16,39 +16,53 @@
         var: ansible_facts
       no_log: true
 
+    - name: Dynaconf - Debug variables for default environment
+      ansible.builtin.shell:
+        cmd: |
+          {{ dynaconf_list_cmd }}
+          {{ python_run_cmd }}
+        chdir: "{{ path_script }}"
+      environment:
+        SET_ENV: default
+        MYAPP_DYNAMIC_ENV: sandbox
+
     # List development environment variables.
     # And run the configuration Python script.
-    - name: Dynaconf list environment variables for DEV
+    - name: Dynaconf - Debug variables for DEV environment
       ansible.builtin.shell:
         cmd: |
           {{ dynaconf_list_cmd }}
           {{ python_run_cmd }}
         chdir: "{{ path_script }}"
       register: command
-      when: ansible_facts.architecture == "x86_64"
+      environment:
+        SET_ENV: dev
+        MYAPP_DYNAMIC_ENV: integration
 
     # This task will export the environment switcher.
     # List testing environment variables.
     # And run the configuration Python script.
-    - name: Dynaconf list environment variables for UAT
+    - name: Dynaconf - Debug variables for PRE environment
       ansible.builtin.shell:
         cmd: |
           export $SET_ENV
           {{ dynaconf_list_cmd }}
           {{ python_run_cmd }}
-        chdir: ../../repos_lbrealdev/python-cli/cli-examples/cli/gittl/
+        chdir: "{{ path_script }}"
       environment:
         SET_ENV: pre
+        MYAPP_DYNAMIC_ENV: preproduction
 
     # This task will export the environment switcher.
     # List production environment variables.
     # And run the configuration Python script.
-    - name: Dynaconf list environment variables for LIVE
+    - name: Dynaconf - Debug variables for PRO environment
       ansible.builtin.shell:
         cmd: |
           export $SET_ENV
           {{ dynaconf_list_cmd }}
           {{ python_run_cmd }}
-        chdir: ../../repos_lbrealdev/python-cli/cli-examples/cli/gittl/
+        chdir: "{{ path_script }}"
       environment:
         SET_ENV: pro
+        MYAPP_DYNAMIC_ENV: production
