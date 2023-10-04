@@ -2,17 +2,17 @@
 
 ### Use
 
-Set up `venv`:
+Set up the `python venv`:
 ```shell
-source venv.sh
+source venv.sh up
 ```
 
-Install ansible and dynaconf:
+Undoing `python venv`:
 ```shell
-pip install ansible dynaconf
+source venv.sh down
 ```
 
-Run playbook:
+Run `dynaconf` ansible playbook:
 ```
 ansible-playbook dynaconf.yml -vvv
 ```
