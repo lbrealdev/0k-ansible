@@ -30,7 +30,10 @@ function delete_venv() {
     echo "Deleted $PYTHON_DEFAULT_VENV_NAME with Python $PYTHON_VENV_VERSION ..."
     deactivate
     rm -rf "./$PYTHON_DEFAULT_VENV_NAME"
-  # If the VIRTUA_LENV environment variable is not set and the venv directory exists, delete venv directory.
+  # If the VIRTUAL_ENV environment variable is not set and the venv directory exists, delete venv directory.
+  # This condition works when we execute source venv.sh down, 
+  # but before for some reason 'venv' was deactivated using the 'deactivate' command manually, 
+  # so we will literally delete the venv directory for future configuration
   elif [ ! -v "$VIRTUAL_ENV" ] && [ -e "$PYTHON_DEFAULT_VENV_NAME" ]; then
     echo "Cleaning up the $PYTHON_DEFAULT_VENV_NAME directory ..."
     rm -rf "./$PYTHON_DEFAULT_VENV_NAME"
