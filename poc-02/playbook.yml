@@ -1,0 +1,12 @@
+---
+
+- name: Test playbook
+  hosts: localhost
+  become: false
+  gather_facts: true
+
+  tasks:
+
+    - name: Debug task for test ansible_facts
+      ansible.builtin.debug:
+        msg: "{{ ansible_facts }}"
