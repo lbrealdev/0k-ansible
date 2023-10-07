@@ -2,7 +2,7 @@
 - name: Dynaconf Configuration Management
   hosts: localhost
   become: false
-  gather_facts: true
+  gather_facts: false
 
   vars:
     python_run_cmd: "python env.py"
@@ -25,6 +25,7 @@
       environment:
         SET_ENV: default
         MYAPP_DYNAMIC_ENV: sandbox
+      changed_when: false
 
     # List development environment variables.
     # And run the configuration Python script.
@@ -38,6 +39,7 @@
       environment:
         SET_ENV: dev
         MYAPP_DYNAMIC_ENV: integration
+      changed_when: false
 
     # This task will export the environment switcher.
     # List testing environment variables.
@@ -52,6 +54,7 @@
       environment:
         SET_ENV: pre
         MYAPP_DYNAMIC_ENV: preproduction
+      changed_when: false
 
     # This task will export the environment switcher.
     # List production environment variables.
@@ -66,3 +69,12 @@
       environment:
         SET_ENV: pro
         MYAPP_DYNAMIC_ENV: production
+      changed_when: false
+
+    - name: Debug task for test ansible_facts
+      ansible.builtin.debug:
+        msg: "{{ ansible_facts['python_version'] }}"
+
+    - name: Debug task for test ansible.builtin.file lookup
+    - ansible.builtin.debug:
+        msg: "The value of .ansible-lint is {{lookup('ansible.builtin.file', './.ansible-lint') }}"
