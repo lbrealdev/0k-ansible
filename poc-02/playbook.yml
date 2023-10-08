@@ -7,9 +7,27 @@
 
   tasks:
 
-    - ansible.builtin.debug:
+    - name: Gathering facts
+      ansible.builtin.debug:
         var: ansible_facts
       no_log: true
+
+    - name: Set vars file
+      ansible.builtin.include_vars:
+        file: test_vars.yml
+        name: _test_vars
+
+    - name: Check if the absolutely necessary packages are installed
+      ansible.builtin.command:
+        cmd: "dpkg-query -W {{ _test_vars.required_packages | join(' ') }}"
+      register: check_packages
+      changed_when: false
+      ignore_errors: true
+
+    - name: Debug check packages previous task
+      ansible.builtin.debug:
+        msg: "DEBUG PACKAGES OK"
+      when: check_packages.rc == 0
 
     - name: Debug task for test ansible_facts
       ansible.builtin.debug:

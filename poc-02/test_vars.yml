@@ -1,0 +1,12 @@
+---
+# vars file for test playbook
+
+# list of absolutely required packages
+required_packages:
+  - unzip
+  - tar
+  - ffmpeg
+  - git
+  - rsync 
+  - python
+...
