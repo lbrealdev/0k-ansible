@@ -5,7 +5,7 @@ PYTHON_DEFAULT_VENV_NAME="venv"
 
 function pip_packages() {
   echo "Installing pip packages ..."
-  pip install ansible-lint dynaconf -q
+  pip install ansible ansible-lint dynaconf -q
 }
 
 function create_venv() {
