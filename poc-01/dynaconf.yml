@@ -1,8 +1,9 @@
 ---
+
 - name: Dynaconf Configuration Management
   hosts: localhost
   become: false
-  gather_facts: false
+  gather_facts: true
 
   vars:
     python_run_cmd: "python env.py"
@@ -76,5 +77,5 @@
         msg: "{{ ansible_facts['python_version'] }}"
 
     - name: Debug task for test ansible.builtin.file lookup
-    - ansible.builtin.debug:
-        msg: "The value of .ansible-lint is {{lookup('ansible.builtin.file', './.ansible-lint') }}"
+      ansible.builtin.debug:
+        msg: "The value of .ansible-lint is {{ lookup('ansible.builtin.file', './.ansible-lint') }}"

@@ -7,6 +7,15 @@
 
   tasks:
 
+    - ansible.builtin.debug:
+        var: ansible_facts
+      no_log: true
+
     - name: Debug task for test ansible_facts
       ansible.builtin.debug:
-        msg: "{{ ansible_facts }}"
+        msg: "{{ ansible_facts['python_version'] }}"
+
+    - name: Debug ansible.builtin.command
+      ansible.builtin.command:
+        cmd: cowsay -t tux "Test ansible command"
+      changed_when: false

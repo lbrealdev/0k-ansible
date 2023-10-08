@@ -13,6 +13,13 @@ source venv.sh down
 ```
 
 Run `dynaconf` ansible playbook:
-```
+```shell
 ansible-playbook dynaconf.yml -vvv
+```
+
+### Ansible Lint
+
+Run ansible-lint:
+```shell
+ansible-lint dynaconf.yml -v
 ```
