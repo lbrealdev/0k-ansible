@@ -16,6 +16,7 @@ function create_venv() {
     # If yen is installed, create a new python 3.12 'venv'.
     if command -v yen &> /dev/null; then
       yen create "$PYTHON_DEFAULT_VENV_NAME" -p "$PYTHON_VENV_VERSION"
+      # shellcheck source=/dev/null
       . "$PYTHON_DEFAULT_VENV_NAME/bin/activate"
       pip_packages
     else
