@@ -21,6 +21,6 @@ ansible-playbook playbook.yml -vvv
 
 Run ansible-lint:
 ```shell
-ansible-lint playbook.yml -v
+ansible-lint -p playbook.yml -v
 ```
 

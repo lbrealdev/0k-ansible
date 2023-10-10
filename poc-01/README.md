@@ -21,5 +21,5 @@ ansible-playbook dynaconf.yml -vvv
 
 Run ansible-lint:
 ```shell
-ansible-lint dynaconf.yml -v
+ansible-lint -p dynaconf.yml -v
 ```
