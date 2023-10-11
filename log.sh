@@ -10,10 +10,9 @@ function log_path() {
   ANSIBLE_LOG_PATH="$LOG_PATH/$LOG_FILE"
   
   if [ -e "$LOG_PATH" ]; then
-    printf "Ansible log directory exist!\n"
+    printf "Ansible log path already exists!"
   else
-    printf "Ansible log directory created!\n"
-    printf "Path: %s" "$ANSIBLE_LOG_PATH"
+    printf "Ansible log path: %s" "$ANSIBLE_LOG_PATH"
     mkdir -p "$LOG_PATH"
     touch "$ANSIBLE_LOG_PATH"
   fi
