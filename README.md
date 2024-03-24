@@ -5,15 +5,23 @@
 
 - [Ansible Galaxy](https://github.com/lbrealdev/0k-ansible/blob/main/ansible-galaxy.md)
 - [Ansible Adhoc](https://github.com/lbrealdev/0k-ansible/blob/main/ansible-adhoc.md)
-- [Ansible Proof of Concepts](https://github.com/lbrealdev/0k-ansible/blob/main/poc/README.md)
+- [Ansible Proof of Concepts](#ansible---proof-of-concepts)
+- [Ansible Config](https://github.com/lbrealdev/0k-ansible/blob/main/ansible-config.md)
+- [Ansible Setup project](#ansible---setup-project)
 
-### ansible - roles
+### Ansible - proof of concepts
 
-#### Role scaffolding
+- [PoC-01](https://github.com/lbrealdev/0k-ansible/tree/main/poc-01)
+- [PoC-02](https://github.com/lbrealdev/0k-ansible/tree/main/poc-02)
 
-Another simple way to build the scaffolding for a role is to use the command:
+### Ansible - setup project
+
+Run this script to configure python 3.12.2 virtual environment with ansible configured:
+```shell
+source venv.sh up
 ```
-ansible-galaxy init <role_name>
-```
 
-Running this command creates an example role in the current working directory, which you can modify to suit your needs. Using the init command also ensures the role is structured correctly in case you want to someday contribute the role to Ansible Galaxy.
+For disable ansible virtual environment, run:
+```shell
+source venv.sh down
+```
