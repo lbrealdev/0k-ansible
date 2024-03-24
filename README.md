@@ -5,7 +5,10 @@
 
 - [Ansible Galaxy](https://github.com/lbrealdev/0k-ansible/blob/main/ansible-galaxy.md)
 - [Ansible Adhoc](https://github.com/lbrealdev/0k-ansible/blob/main/ansible-adhoc.md)
-- [Ansible Proof of Concepts](https://github.com/lbrealdev/0k-ansible/blob/main/poc/README.md)
+- [Ansible Proof of Concepts]
+    - [POC-01](https://github.com/lbrealdev/0k-ansible/tree/main/poc-01)
+    - [POC-02](https://github.com/lbrealdev/0k-ansible/tree/main/poc-02)
+- [Ansible Config](https://github.com/lbrealdev/0k-ansible/blob/main/ansible-config.md)
 
 ### Setup project
 
