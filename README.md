@@ -7,6 +7,7 @@
 - [Ansible Adhoc](https://github.com/lbrealdev/0k-ansible/blob/main/ansible-adhoc.md)
 - [Ansible Proof of Concepts](#ansible---proof-of-concepts)
 - [Ansible Config](https://github.com/lbrealdev/0k-ansible/blob/main/ansible-config.md)
+- [Ansible Setup project](#ansible---setup-project)
 
 ### Ansible - proof of concepts
 
