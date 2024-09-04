@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PYTHON_VENV_VERSION="3.12.2"
+PYTHON_VENV_VERSION="3.12"
 PYTHON_DEFAULT_VENV_NAME="venv"
 
 function pip_packages() {
