@@ -7,6 +7,6 @@ required_packages:
   - tar
   - ffmpeg
   - git
-  - rsync 
-  - python
+  - rsync
+  - python3
 ...
