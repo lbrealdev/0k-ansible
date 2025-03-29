@@ -21,8 +21,8 @@
       ansible.builtin.command:
         cmd: "dpkg-query -W {{ _test_vars.required_packages | join(' ') }}"
       register: check_packages
-      changed_when: false
-      ignore_errors: true
+     # changed_when: false
+     # ignore_errors: true
 
     - name: Debug check packages previous task
       ansible.builtin.debug:
@@ -33,7 +33,7 @@
       ansible.builtin.debug:
         msg: "{{ ansible_facts['python_version'] }}"
 
-    - name: Debug ansible.builtin.command
-      ansible.builtin.command:
-        cmd: cowsay -t tux "Test ansible command"
-      changed_when: false
+   # - name: Debug ansible.builtin.command
+   #   ansible.builtin.command:
+   #     cmd: cowsay -t tux "Test ansible command"
+   #   changed_when: false
