@@ -3,7 +3,7 @@
 #### Role scaffolding
 
 Another simple way to build the scaffolding for a role is to use the command:
-```
+```shell
 ansible-galaxy init <role_name>
 ```
 
