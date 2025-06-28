@@ -25,3 +25,22 @@ For disable ansible virtual environment, run:
 ```shell
 source venv.sh down
 ```
+
+### Commands
+
+```shell
+ansible-doc -t become -l
+```
+
+```shell
+ansible-config dump --changed-only
+```
+
+
+- https://docs.ansible.com/ansible/latest/plugins/become.html
+
+### Related links
+
+- [Understanding privilege escalation: become](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_privilege_escalation.html)
+- [Ansible – “sudo: a password is required”](https://www.shellhacks.com/ansible-sudo-a-password-is-required/)
+- [Specify sudo password for Ansible](https://stackoverflow.com/questions/21870083/specify-sudo-password-for-ansible)
