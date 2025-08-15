@@ -3,16 +3,16 @@
 
 <!-- TOC -->
 
-- [Ansible Galaxy](https://github.com/lbrealdev/0k-ansible/blob/main/ansible-galaxy.md)
-- [Ansible Adhoc](https://github.com/lbrealdev/0k-ansible/blob/main/ansible-adhoc.md)
-- [Ansible Proof of Concepts](#ansible---proof-of-concepts)
-- [Ansible Config](https://github.com/lbrealdev/0k-ansible/blob/main/ansible-config.md)
+- [Ansible Adhoc](https://github.com/lbrealdev/0k-ansible/blob/main/examples/ansible-adhoc.md)
+- [Ansible Config](https://github.com/lbrealdev/0k-ansible/blob/main/examples/ansible-config.md)
+- [Ansible Galaxy](https://github.com/lbrealdev/0k-ansible/blob/main/examples/ansible-galaxy.md)
+- [Ansible Examples](#ansible---proof-of-concepts)
 - [Ansible Setup project](#ansible---setup-project)
 
 ### Ansible - proof of concepts
 
-- [PoC-01](https://github.com/lbrealdev/0k-ansible/tree/main/poc-01)
-- [PoC-02](https://github.com/lbrealdev/0k-ansible/tree/main/poc-02)
+- [PoC-01](https://github.com/lbrealdev/0k-ansible/tree/main/examples/poc-01)
+- [PoC-02](https://github.com/lbrealdev/0k-ansible/tree/main/examples/poc-02)
 
 ### Ansible - setup project
 
