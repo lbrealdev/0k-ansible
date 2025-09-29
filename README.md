@@ -1,20 +1,13 @@
 # 0k-ansible
+
 0k ansible is my personal repository for ansible stuffs.
 
-<!-- TOC -->
-
-- [Ansible Adhoc](https://github.com/lbrealdev/0k-ansible/blob/main/examples/ansible-adhoc.md)
-- [Ansible Config](https://github.com/lbrealdev/0k-ansible/blob/main/examples/ansible-config.md)
-- [Ansible Galaxy](https://github.com/lbrealdev/0k-ansible/blob/main/examples/ansible-galaxy.md)
-- [Ansible Examples](#ansible---proof-of-concepts)
-- [Ansible Setup project](#ansible---setup-project)
-
-### Ansible - proof of concepts
+## Ansible - proof of concepts
 
 - [PoC-01](https://github.com/lbrealdev/0k-ansible/tree/main/examples/poc-01)
 - [PoC-02](https://github.com/lbrealdev/0k-ansible/tree/main/examples/poc-02)
 
-### Ansible - setup project
+## Ansible - setup project
 
 Run this script to configure python 3.12.2 virtual environment with ansible configured:
 ```shell
@@ -26,21 +19,24 @@ For disable ansible virtual environment, run:
 source venv.sh down
 ```
 
-### Commands
-
-```shell
-ansible-doc -t become -l
-```
-
-```shell
-ansible-config dump --changed-only
-```
-
-
-- https://docs.ansible.com/ansible/latest/plugins/become.html
-
 ### Related links
 
 - [Understanding privilege escalation: become](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_privilege_escalation.html)
 - [Ansible – “sudo: a password is required”](https://www.shellhacks.com/ansible-sudo-a-password-is-required/)
 - [Specify sudo password for Ansible](https://stackoverflow.com/questions/21870083/specify-sudo-password-for-ansible)
+
+## Documentation
+
+The documentation follows [Diátaxis Framework](https://diataxis.fr/).
+
+- ## Tutorials
+  - [Getting Started](docs/tutorials/getting-started.md)
+
+- ## How-to guides
+  - [Setup project](docs/how-to-guides/uv-setup.md)
+
+- ## Reference
+  - [ansible-config](docs/reference/ansible-config.md)
+  - [ansible-doc](docs/reference/ansible-doc.md)
+  - [ansible-galaxy](docs/reference/ansible-galaxy.md)
+  - [ansible-playbook](docs/reference/ansible-playbook.md)
