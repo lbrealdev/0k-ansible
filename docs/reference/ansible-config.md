@@ -15,6 +15,11 @@ Display ansible configuration file:
 ansible-config view -c <ansible-cfg-file-path>
 ```
 
+```shell
+ansible-config dump --changed-only
+```
+
 ### Related links
+
 - https://docs.ansible.com/ansible/latest/installation_guide/intro_configuration.html
 - https://docs.ansible.com/ansible/latest/cli/ansible-config.html#ansible-config
